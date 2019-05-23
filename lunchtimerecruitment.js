@@ -20,9 +20,6 @@ function getCal() {
 
   end.setMonth(end.getMonth()+1);
 
-  Logger.log('from:' + Utilities.formatDate( today, 'Asia/Tokyo', 'yyyy-MM'));
-  Logger.log('end:' + Utilities.formatDate( end, 'Asia/Tokyo', 'yyyy-MM'));
-
   var events = calendar.getEvents(today, end);
   var recruitmentName = calendar.getName();
 
@@ -31,7 +28,6 @@ function getCal() {
     var startTime = timeFormatter(events[i].getStartTime());
     var endTime = timeFormatter(events[i].getEndTime());
     if (title.match(/募集/)) {
-      Logger.log(title);
       recruitment_info += '募集者：　' + recruitmentName + '\n';
       recruitment_info += title + '\n-------------------------\n';
       recruitment_info += startTime + '〜' +endTime;
@@ -43,7 +39,6 @@ function getCal() {
 
 function postRecruitmentLunch() {
   getCal();
-  Logger.log(recruitment_info);
   var jsonData = {
     "username": USER_NAME,
     "icon_emoji": ICON,
