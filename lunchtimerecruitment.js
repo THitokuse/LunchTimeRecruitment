@@ -1,9 +1,10 @@
-//slackの登録
+// slackの登録
 var SLACK_CHANNEL_SASHI_LUNCH = 'sashi-lunch';
 var SLACK_POST_SASHI_LUNCH_URL = 'https://hooks.slack.com/services/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';
 var USER_NAME = 'LunchTimeRecruitment!';
 var ICON = ':lunch_time:';
 
+// 使用する変数の定義
 var recruitment_info = [];
 var slack_name = "";
 
@@ -11,6 +12,7 @@ function timeFormatter(date){
   return Utilities.formatDate(date,'JST','MM/dd (E) HH:mm');
 }
 
+// SpredSheet(recruitment-sashi-lunch)には、calander_IDとSlack名が登録
 function getSheet(user_calendar_id) {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = spreadsheet.getActiveSheet();
@@ -77,4 +79,3 @@ function postRecruitmentLunch(e) {
     return;
   }
 }
-
