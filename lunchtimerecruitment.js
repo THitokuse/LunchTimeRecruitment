@@ -1,5 +1,4 @@
 // slackの登録
-var SLACK_CHANNEL_SASHI_LUNCH = 'sashi-lunch';
 var SLACK_POST_SASHI_LUNCH_URL = 'https://hooks.slack.com/services/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';
 var USER_NAME = 'LunchTimeRecruitment!';
 var ICON = ':lunch_time:';
@@ -55,6 +54,7 @@ function getCal(user_calendar_id) {
   return recruitment_info;
 }
 
+// カレンダー登録が行われると発火(eターゲットからカレンダーID取得)
 function postRecruitmentLunch(e) {
   if (e !== undefined) {
     getCal(e.calendarId);
@@ -79,3 +79,4 @@ function postRecruitmentLunch(e) {
     return;
   }
 }
+
